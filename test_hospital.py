@@ -1,6 +1,5 @@
 import pytest
-from health_assessment import health_status
-from health_assessment import calculate_health_score
+from health_assessment import health_status, calculate_health_score, display_summary
 
 def test_health_score():
     assert calculate_health_score([100, 200]) == 150
@@ -11,23 +10,15 @@ def test_health_score():
     assert health_status(45) == "Poor Health"
     assert health_status(30) == "Critical Condition"
 
-
 def test_display_summary():
     expected_output = (
         "\n--- Patient Health Report ---\n"
         "Name: Kavya\n"
         "Patient ID: 101\n"
-        "Age: 25\n"
-        "Average Health Score:155\n"
+        "Age: 20\n"
+        "Average Health Score: 155.00\n"
         "Health Status: Critical Condition"
     )
 
-    result = health_status(
-        "Kavya",
-        "101",
-        "20",
-        155.00,
-        "Critical Condition"
-    )
-
+    result = display_summary("Kavya", "101", "20", 155.00, "Critical Condition")
     assert result == expected_output
