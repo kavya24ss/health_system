@@ -1,4 +1,4 @@
-from health_assessment import display_summary
+from health_assessment import health_status
 
 def test_health_status():
     assert health_status(95) == "Excellent Health"
@@ -12,19 +12,19 @@ def test_health_status():
 def test_display_summary():
     expected_output = (
         "\n--- Patient Health Report ---\n"
-        "Name: john\n"
-        "Patient ID: 12345\n"
+        "Name: Kavya\n"
+        "Patient ID: 101\n"
         "Age: 25\n"
-        "Average Health Score: 80.00\n"
-        "Health Status: Good Health"
+        "Average Health Score:155\n"
+        "Health Status: Critical Condition"
     )
 
-    result = display_summary(
-        "john",
-        "12345",
-        "25",
-        80.00,
-        "Good Health"
+    result = health_status(
+        "Kavya",
+        "101",
+        "20",
+        155.00,
+        "Critical Condition"
     )
 
     assert result == expected_output
