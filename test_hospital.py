@@ -1,5 +1,5 @@
-from health_assessment import health_status
 import pytest
+from health_assessment import health_status
 from health_assessment import calculate_health_score
 
 def test_health_score():
