@@ -1,3 +1,6 @@
+def calculate_health_score(values):
+    return sum(values) / len(values)
+
 def health_status(avg):
     if 90 <= avg <= 100:
         return "Excellent Health"
@@ -11,8 +14,8 @@ def health_status(avg):
         return "Poor Health"
     else:
         return "Critical Condition"
-    
-def display_summary(name,pid,age,avg,status):
+
+def display_summary(name, pid, age, avg, status):
     return (
         "\n--- Patient Health Report ---\n"
         f"Name: {name}\n"
@@ -21,28 +24,20 @@ def display_summary(name,pid,age,avg,status):
         f"Average Health Score: {avg:.2f}\n"
         f"Health Status: {status}"
     )
-    
 
 def main():
     print("=== Patient Health Evaluation System ===\n")
-name = "Kavya"
-pid = 101
-age = 20
-bp = 140
-sugar = 250
-bmi = 75
+    name = "Kavya"
+    pid = 101
+    age = 20
+    bp = 140
+    sugar = 250
+    bmi = 75
 
-avg_score = (bp + sugar + bmi) / 3
-status = health_status(avg_score)
+    avg_score = (bp + sugar + bmi) / 3
+    status = health_status(avg_score)
 
-print(
-        display_summary( 
-            name,
-            pid,
-            age,
-            avg_score,
-            status
-        )   
-    )
+    print(display_summary(name, pid, age, avg_score, status))
+
 if __name__ == "__main__":
     main()
