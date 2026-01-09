@@ -1,0 +1,30 @@
+from health_assessment import display_summary
+
+def test_health_status():
+    assert health_status(95) == "Excellent Health"
+    assert health_status(85) == "Good Health"
+    assert health_status(70) == "Moderate Health"
+    assert health_status(60) == "Fair Health"
+    assert health_status(45) == "Poor Health"
+    assert health_status(30) == "Critical Condition"
+
+
+def test_display_summary():
+    expected_output = (
+        "\n--- Patient Health Report ---\n"
+        "Name: john\n"
+        "Patient ID: 12345\n"
+        "Age: 25\n"
+        "Average Health Score: 80.00\n"
+        "Health Status: Good Health"
+    )
+
+    result = display_summary(
+        "john",
+        "12345",
+        "25",
+        80.00,
+        "Good Health"
+    )
+
+    assert result == expected_output
