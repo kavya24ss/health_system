@@ -1,6 +1,9 @@
 from health_assessment import health_status
+import pytest
+from health_assessment import calculate_health_score
 
-def test_health_status():
+def test_health_score():
+    assert calculate_health_score([100, 200]) == 150
     assert health_status(95) == "Excellent Health"
     assert health_status(85) == "Good Health"
     assert health_status(70) == "Moderate Health"
