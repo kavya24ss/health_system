@@ -25,13 +25,12 @@ def display_summary(name,pid,age,avg,status):
 
 def main():
     print("=== Patient Health Evaluation System ===\n")
-name = input("Enter Patient Name: ")
-pid = input("Enter Patient ID: ")
-age = int(input("Enter Age: "))
-
-bp = float(input("Enter Blood Pressure Score: "))
-sugar = float(input("Enter Sugar Level Score: "))
-bmi = float(input("Enter BMI Score: "))
+name = "Kavya"
+pid = 101
+age = 20
+bp = 140
+sugar = 250
+bmi = 75
 
 avg_score = (bp + sugar + bmi) / 3
 status = health_status(avg_score)
